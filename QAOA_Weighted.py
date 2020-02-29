@@ -1,10 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
-#import all necessary packages
 from typing import List, Tuple
 
 import networkx as nx
@@ -19,10 +12,6 @@ from pyquil import get_qc, Program
 from grove.pyqaoa.qaoa import QAOA
 
 get_ipython().run_line_magic('matplotlib', 'inline')
-
-
-# In[2]:
-
 
 #create the graph
 n = 4
@@ -50,10 +39,6 @@ nx.draw_networkx_edge_labels(G, pos, edge_labels={(0,1):2,
 
 nx.draw(G, with_labels = True, node_color = 'pink')
 
-
-# In[3]:
-
-
 #find largest weight in list
 largest_weight = 0
 for edge in elist:
@@ -61,10 +46,6 @@ for edge in elist:
         weight = elist[i][2]
         if weight > largest_weight:
             largest_weight = weight
-
-
-# In[4]:
-
 
 def maxcut_qaoa(graph, steps=1, rand_seed=None, connection=None, samples=None,
                 initial_beta=None, initial_gamma=None, minimizer_kwargs=None,
@@ -111,10 +92,6 @@ def maxcut_qaoa(graph, steps=1, rand_seed=None, connection=None, samples=None,
 
     return qaoa_inst
 
-
-# In[ ]:
-
-
 import numpy as np
 from pyquil import *
 import pyquil.api as QVMConnection
@@ -124,23 +101,12 @@ qvm = api.QVMConnection()
 inst = maxcut_qaoa(G, steps=10, connection=qvm, rand_seed=None, samples=None, initial_beta=None, initial_gamma=None, minimizer_kwargs=None, vqe_option=None)
 
 
-# In[ ]:
-
-
 #run qaoa and find most frequent bitstring
 get_ipython().run_cell_magic('time', '', '\nbetas, gammas = inst.get_angles()\nprobs = inst.probabilities(np.hstack((betas, gammas)))\nfor state, prob in zip(inst.states, probs):\n    print(state, prob)\n\nprint("Most frequent bitstring from sampling")\nmost_freq_string, sampling_results = inst.get_string(betas, gammas)')
 
 print(most_freq_string)
 
-
-# In[ ]:
-
-
 print(most_freq_string)
-
-
-# In[ ]:
-
 
 #turn 0s into pink nodes and 1s into blue nodes
 colours = []
