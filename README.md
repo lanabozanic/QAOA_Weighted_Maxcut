@@ -1,1 +1,1 @@
-# QAOA_Weight_Maxcut
+# QAOA Weight Maxcut
