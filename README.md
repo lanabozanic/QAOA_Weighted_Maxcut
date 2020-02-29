@@ -1,4 +1,4 @@
-# QAOA Weight Maxcut
+# QAOA Weighted Maxcut
 
 ## Discussion of Results
 Based on the output by the QAOA algorithm, the most frequent bitstring is 1101. The bitstring, if read backwards, corresponds to the nodes in the graph such that the 0 measured from the first qubit is the 4rth node on the graph. 
