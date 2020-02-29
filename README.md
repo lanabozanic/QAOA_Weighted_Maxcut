@@ -7,7 +7,7 @@ The MaxCut problem seeks to colour the nodes of a graph (with 2 different colour
 
 The 0 and 1 can be interpreted as either colour: if we take 0 as pink and 1 as blue , the resulting MaxCut on the graph inputted into the QAOA algorithm will look like this:
 
-<img src="https://github.com/lanabozanic/QAOA_Weight_Maxcut/blob/master/maxcut.PNG" alt="MaxCut Result" width="250">
+<img src="https://github.com/lanabozanic/QAOA_Weighted_Maxcut/blob/master/maxcut-graph.PNG" alt="MaxCut Result" width="250">
 
 ## The QAOA Algorithm
 Quick explanation on how the beta and gamma parameters are optimized to find our desired expecation value, corresponding to the MaxCut of the graph <a href='https://github.com/lanabozanic/QAOA_Weighted_Maxcut/blob/master/The_QAOA_Algorithm.ipynb'>here</a>
